@@ -17,6 +17,10 @@ public class ModEntityGeneration {
                 Biomes.THE_END, Biomes.SMALL_END_ISLANDS, Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS);
         addEntityToSpecificBiomes(event, EntityType.ENDERMAN,70, 10, 20,
                 Biomes.THE_END, Biomes.SMALL_END_ISLANDS, Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS);
+        addEntityToSpecificBiomes(event, EntityType.SHULKER,1, 1, 1,
+                Biomes.THE_END, Biomes.SMALL_END_ISLANDS, Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS);
+        addEntityToSpecificBiomes(event, EntityType.ENDERMITE,6, 1, 3,
+                Biomes.THE_END, Biomes.SMALL_END_ISLANDS, Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS);
     }
 
 

@@ -13,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import pl.krystian.szsmod.SzsMod;
 import pl.krystian.szsmod.world.structure.structures.EndermiteSpawner1Structure;
+import pl.krystian.szsmod.world.structure.structures.EndermiteSpawner2Structure;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +26,8 @@ public class ModStructures {
 
     public static final RegistryObject<Structure<NoFeatureConfig>> ENDERMITE_SPAWNER1 =
             STRUCTURES.register("endermite_spawner1", EndermiteSpawner1Structure::new);
+    public static final RegistryObject<Structure<NoFeatureConfig>> ENDERMITE_SPAWNER2 =
+            STRUCTURES.register("endermite_spawner2", EndermiteSpawner2Structure::new);
 
     /* average distance apart in chunks between spawn attempts */
     /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/
@@ -33,6 +36,9 @@ public class ModStructures {
     public static void setupStructures() {
         setupMapSpacingAndLand(ENDERMITE_SPAWNER1.get(),
                 new StructureSeparationSettings(500,250, 1234567890),
+                true);
+        setupMapSpacingAndLand(ENDERMITE_SPAWNER2.get(),
+                new StructureSeparationSettings(600,260, 1234567890),
                 true);
     }
 

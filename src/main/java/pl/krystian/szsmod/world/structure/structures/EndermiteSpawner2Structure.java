@@ -25,8 +25,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import pl.krystian.szsmod.SzsMod;
 
-public class EndermiteSpawner1Structure extends Structure<NoFeatureConfig> {
-    public EndermiteSpawner1Structure() {
+public class EndermiteSpawner2Structure extends Structure<NoFeatureConfig> {
+    public EndermiteSpawner2Structure() {
         super(NoFeatureConfig.CODEC);
     }
 
@@ -52,7 +52,7 @@ public class EndermiteSpawner1Structure extends Structure<NoFeatureConfig> {
 
     @Override
     public IStartFactory<NoFeatureConfig> getStartFactory() {
-        return EndermiteSpawner1Structure.Start::new;
+        return EndermiteSpawner2Structure.Start::new;
     }
     public static class Start extends StructureStart<NoFeatureConfig> {
 
@@ -73,16 +73,16 @@ public class EndermiteSpawner1Structure extends Structure<NoFeatureConfig> {
             //addpieces()
             JigsawManager.func_242837_a(dynamicRegistryManager,
                     new VillageConfig(() -> dynamicRegistryManager.getRegistry(Registry.JIGSAW_POOL_KEY)
-                            .getOrDefault(new ResourceLocation(SzsMod.MOD_ID, "endermite_spawner1/start_pool")),
+                            .getOrDefault(new ResourceLocation(SzsMod.MOD_ID, "endermite_spawner2/start_pool")),
                             10), AbstractVillagePiece::new, chunkGenerator, templateManagerIn,
                     blockpos, this.components, this.rand,false,true);
 
-            this.components.forEach(piece -> piece.offset(0, -3, 0));
+            this.components.forEach(piece -> piece.offset(0, -4, 0));
             this.components.forEach(piece -> piece.getBoundingBox().minY -= 2);
 
             this.recalculateStructureSize();
 
-            LogManager.getLogger().log(Level.DEBUG, "Endermite spawner1 at " +
+            LogManager.getLogger().log(Level.DEBUG, "Endermite spawner2 at " +
                     this.components.get(0).getBoundingBox().minX + " " +
                     this.components.get(0).getBoundingBox().minY + " " +
                     this.components.get(0).getBoundingBox().minZ);

@@ -67,6 +67,8 @@ public class ModWorldEvents {
                     new HashMap<>(serverWorld.getChunkProvider().generator.func_235957_b_().func_236195_a_());
             tempMap.putIfAbsent(ModStructures.ENDERMITE_SPAWNER1.get(),
                     DimensionStructuresSettings.field_236191_b_.get(ModStructures.ENDERMITE_SPAWNER1.get()));
+            tempMap.putIfAbsent(ModStructures.ENDERMITE_SPAWNER2.get(),
+                    DimensionStructuresSettings.field_236191_b_.get(ModStructures.ENDERMITE_SPAWNER2.get()));
             serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap;
 
         }

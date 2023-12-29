@@ -21,6 +21,7 @@ public class ModStructureGeneration {
             List<Supplier<StructureFeature<?, ?>>> structures = event.getGeneration().getStructures();
 
             structures.add(() -> ModStructures.ENDERMITE_SPAWNER1.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+            structures.add(() -> ModStructures.ENDERMITE_SPAWNER2.get().withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         }
     }
 }
