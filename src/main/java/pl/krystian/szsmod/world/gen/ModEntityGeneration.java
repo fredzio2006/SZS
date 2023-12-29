@@ -13,9 +13,9 @@ import java.util.List;
 
 public class ModEntityGeneration {
     public static void onEntitySpawn(final BiomeLoadingEvent event){
-        addEntityToSpecificBiomes(event, EntityType.PHANTOM,10, 1, 5,
+        addEntityToSpecificBiomes(event, EntityType.PHANTOM,12, 1, 2,
                 Biomes.THE_END, Biomes.SMALL_END_ISLANDS, Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS);
-        addEntityToSpecificBiomes(event, EntityType.ENDERMAN,60, 10, 20,
+        addEntityToSpecificBiomes(event, EntityType.ENDERMAN,70, 10, 20,
                 Biomes.THE_END, Biomes.SMALL_END_ISLANDS, Biomes.END_BARRENS, Biomes.END_HIGHLANDS, Biomes.END_MIDLANDS);
     }
 

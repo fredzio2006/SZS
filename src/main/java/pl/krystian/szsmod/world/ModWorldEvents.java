@@ -1,4 +1,4 @@
-package pl.krystian.szsmod.structure;
+package pl.krystian.szsmod.world;
 
 
 import com.mojang.serialization.Codec;
@@ -19,6 +19,8 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import pl.krystian.szsmod.SzsMod;
 import pl.krystian.szsmod.world.gen.ModEntityGeneration;
 import org.apache.logging.log4j.LogManager;
+import pl.krystian.szsmod.world.gen.ModStructureGeneration;
+import pl.krystian.szsmod.world.structure.ModStructures;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -29,6 +31,9 @@ public class ModWorldEvents {
 
     @SubscribeEvent
     public static void biomeLoadingEvent(final BiomeLoadingEvent event){
+        ModStructureGeneration.generateStructures(event);
+
+        //
 
         ModEntityGeneration.onEntitySpawn(event);
     }
@@ -58,6 +63,11 @@ public class ModWorldEvents {
             }
 
             // Adding our Structure to the Map
+            Map<Structure<?>, StructureSeparationSettings> tempMap =
+                    new HashMap<>(serverWorld.getChunkProvider().generator.func_235957_b_().func_236195_a_());
+            tempMap.putIfAbsent(ModStructures.ENDERMITE_SPAWNER1.get(),
+                    DimensionStructuresSettings.field_236191_b_.get(ModStructures.ENDERMITE_SPAWNER1.get()));
+            serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap;
 
         }
     }
